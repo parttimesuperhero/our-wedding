@@ -1,0 +1,52 @@
+@import "bourbon";
+@import "neat";
+@import "normalize";
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700);
+
+$mobile: new-breakpoint(max-width 1022px 4);
+
+$baseFontFamily: 'Open Sans', sans-serif;
+$altFontFamily: 'Open Sans', sans-serif;
+
+$color1: #2f2f2f; //rgba(47, 47, 47, 100)
+$color2: #fefffe; //rgba(254, 255, 254, 100)
+$color3: #ef0e7f; //rgba(239, 14, 127, 100)
+$color4: #9b287b; //rgba(155, 40, 123, 100)
+$color5: #f6a6c9; //rgba(246, 166, 201, 100)
+
+h1,h2,h3,h4,h5 {
+	margin:0;
+	font-family: $altFontFamily;
+}
+
+html,
+body {
+	@include outer-container(2000px);
+	height:100%;
+}
+
+.container {
+	@include span-columns(6);
+	min-height: 100%;
+
+	&.alt {
+		text-align: left;
+		background: #373536;
+	}
+
+	@include media($mobile) {
+		text-align: center;
+		width:100%;
+
+		&.alt {
+			text-align: center;
+		}
+	}
+}
+
+
+.hero {
+	width: 100%;
+	max-width:600px;
+}
